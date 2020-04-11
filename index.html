@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ACFD</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  
+  <style>
+    .square {
+      height: 50px;
+      width: 50px;
+      background-color: #555;
+    }
+      </style>
+</head>
+
+<body>
+  <div>
+    <nav style="line-height:150px; height:150px; background-color:#e25822">          
+        <div class="col-md-12 my-auto">
+          <h1 align="center", style="font-family:Gill Sans Extrabold, sans-serif;"><b>Adams County Fire Department Dashboard</b></h1>
+        </div>
+    </nav>
+  </div>
+ 
+  <div class="container">
+    <div class="row", class="h-75 d-inline-block">
+      <div style="height: 26px", style="background-color: white;">
+      </div>
+    </div>
+    <div class="row", class="h-5 d-inline-block", style="background-color: black;">
+      <div style="height: 5px", style="background-color: black;">
+      </div>
+    </div>
+    <div class="row", class="h-75 d-inline-block", style="background-color: white;">
+      <div style="height: 28px", style="background-color: white;">
+        <h4 align="center"><b>Bar Graph Title</b></h4>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2">
+        <div class="well">
+          <h5>Incident Type:</h5>
+          <select id="selDataset" onchange="optionChanged(this.value)"></select>
+        </div>
+      </div>
+      <div class="col-md-10" >
+        <div id="bar"></div>
+        <div class="square"></div>
+      </div>
+    </div>
+    <!-- <div class="row", class="h-5 d-inline-block", style="background-color: black;">
+      <div style="height: 5px", style="background-color: black;">
+      </div>
+    </div> -->
+    <div class="row", class="h-75 d-inline-block", style="background-color: white;">
+      <div style="height: 28px", style="background-color: white;">
+        <h4 align="center"><b>Heat Graph Title</b></h4>
+      </div>
+    </div>
+      <div class="row">
+      <div class="col-md-12">
+        <div id="heat"></div>
+        <div class="square"></div>
+      </div>
+      <div class="row", class="h-75 d-inline-block">
+        <div class="col-md-12"></div>
+      </div>
+      <div class="row", class="h-75 d-inline-block", style="background-color: white;">
+        <div style="height: 28px", style="background-color: white;">
+        </div>
+      </div>
+    </div>
+    <div class="row", class="h-5 d-inline-block", style="background-color: black;">
+      <div style="height: 5px", style="background-color: black;">
+      </div>
+    </div>
+    <div class="row", class="h-75 d-inline-block", style="background-color: white;">
+      <div style="height: 28px", style="background-color: white;">
+        <h4 align="center"><b>Map Graph</b></h4>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <div id="map"></div>
+        <div class="square"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="./static/js/app.js"></script>
+ 
+
+</body>
+
+</html>
