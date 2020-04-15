@@ -1,15 +1,15 @@
 
-d3.csv("incident-type-and-response-times.csv").then(function(data){
-    console.log(data)
+// d3.csv("incident-type-and-response-times.csv").then(function(data){
+//     console.log(data)
 
-    buildPlots()
+//     buildPlots()
     
-    function buildPlots(){
+//     function buildPlots(){
         // var incidentType = data[0]["Basic Type Of Alarm (FD1.50)"]
-        var incidentType = ["EMS Call", "Fire Call", "Other Call", "Total Calls"]
-        for (var i =0; i<incidentType.length; i++){
-        dropdown = d3.select("#selDataset").append("option").text(incidentType[i])
-        }
+        // var incidentType = ["EMS Call", "Fire Call", "Other Call", "Total Calls"]
+        // for (var i =0; i<incidentType.length; i++){
+        // dropdown = d3.select("#selDataset").append("option").text(incidentType[i])
+        // }
       
 
     // d3.selectAll("#selDataset").on("change", dropDownRefresh)
@@ -29,6 +29,6 @@ d3.csv("incident-type-and-response-times.csv").then(function(data){
 //     }
 // }
    
+// // })
+// }
 // })
-}
-})
