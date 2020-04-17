@@ -16,13 +16,15 @@
   crossorigin=""></script>
 
   <!-- d3 JS -->
-  <script src="https://d3js.org/d3.v4.min.js"></script>
-  
+  <script src="https://d3js.org/d3.v4.min.js">
+  </script>
+  <script src="https://d3js.org/d3.v3.js"></script>
 
  <!-- Marker Cluster JS & CSS -->
  <script type="text/javascript" src="https://unpkg.com/leaflet.markercluster@1.0.3/dist/leaflet.markercluster.js"></script>
  <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet.markercluster@1.0.3/dist/MarkerCluster.css">
  <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet.markercluster@1.0.3/dist/MarkerCluster.Default.css">
+ 
 
  <!-- Our CSS -->
  <link rel="stylesheet" type="text/css" href="static/css/style.css">
@@ -32,8 +34,10 @@
 
 <body>
   <div>
-    <nav style="line-height:150px; height:150px; background-color:#e25822">          
-        <div class="col-md-12 my-auto">
+    <nav style="line-height:150px; height:150px; background-color:#e25822">
+      <!-- <img src="ACFRLogo.png" alt="logo">           -->
+      <div class="col-md-12 my-auto">
+          <img width="130px" height="70px"src="{% static "ACFRLogo.png}" style="position:relative;top:-10px">  
           <h1 align="center", style="font-family:Gill Sans Extrabold, sans-serif;"><b>Adams County Fire Department Dashboard</b></h1>
         </div>
     </nav>
@@ -77,23 +81,26 @@
         <h4 align="center"><b>Heat Graph Title</b></h4>
       </div>
     </div>
-      <div class="row">
+      
+    <!-- #Begin heat map -->
+    <div class="row">
       <div class="col-md-12">
-        <div id="heat"></div>
-        <div id="dataset-picker"></div>
+        <div style="width: 1152px; height: 382px;" id="heatchart"></div>
+        <div id="dataset-picker">
+        </div>
         <script type="text/javascript">
-          var margin = { top: 50, right: 0, bottom: 100, left: 30 },
+          var margin = { top: 50, right: 10, bottom: 100, left: 100 },
               width = 960 - margin.left - margin.right,
               height = 430 - margin.top - margin.bottom,
               gridSize = Math.floor(width / 24),
               legendElementWidth = gridSize*2,
               buckets = 9,
-              colors = ["#ffffd9","#edf8b1","#c7e9b4","#7fcdbb","#41b6c4","#1d91c0","#225ea8","#253494","#081d58"], // alternatively colorbrewer.YlGnBu[9]
+              colors = ["#00BF1B","#2D9816","#39C600","#94CE00","#C4D200","#D98900","#DD5C00","#E12D00","#E50003"], // alternatively colorbrewer.YlGnBu[9]
               days = ["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"],
               times = ["1a", "2a", "3a", "4a", "5a", "6a", "7a", "8a", "9a", "10a", "11a", "12a", "1p", "2p", "3p", "4p", "5p", "6p", "7p", "8p", "9p", "10p", "11p", "12p"];
-              datasets = ["EMS.csv", "Fire.csv", "Other.csv", "Total.csv"];
+              datasets = ["dataEMS.csv","dataFire.csv","dataOther.csv","dataTotal.csv"];
     
-          var svg = d3.select("#heat").append("svg")
+          var svg = d3.select("#heatchart").append("svg")
               .attr("width", width + margin.left + margin.right)
               .attr("height", height + margin.top + margin.bottom)
               .append("g")
@@ -107,7 +114,7 @@
                 .attr("y", function (d, i) { return i * gridSize; })
                 .style("text-anchor", "end")
                 .attr("transform", "translate(-6," + gridSize / 1.5 + ")")
-                .attr("class", function (d, i) { return ((i >= 0 && i <= 4) ? "dayLabel mono axis axis-workweek" : "dayLabel mono axis"); });
+                .attr("class", function (d, i) { return ((i >= 1 && i <= 4) ? "dayLabel mono axis axis-workweek" : "dayLabel mono axis"); });
     
           var timeLabels = svg.selectAll(".timeLabel")
               .data(times)
@@ -186,16 +193,17 @@
     
           datasetpicker.enter()
             .append("input")
-            .attr("value", function(d){ return (d) + " Calls"  })
+            .attr("value", function(d){ return "Click for " + d })
             .attr("type", "button")
             .attr("class", "dataset-button")
             .on("click", function(d) {
               heatmapChart(d);
             });
-      </script>
+        </script>
+
 
       
-      </div>
+      <div>
       <div class="row", class="h-75 d-inline-block">
         <div class="col-md-12"></div>
       </div>
@@ -226,9 +234,9 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-  <script src="./static/js/app.js"></script>
- 
-
-</body>
-
+  <script src="./static/js/app.js">
+  
+  
+  </script>
+ </body>
 </html>
