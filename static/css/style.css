@@ -34,3 +34,10 @@ html {
   text.axis-worktime {
     fill: #000;
   }
+
+
+  h3 {
+    position: absolute;
+    left: 302px;
+    top: 48px;
+  }
