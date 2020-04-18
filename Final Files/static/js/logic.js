@@ -4,16 +4,33 @@ var myMap = L.map("map", {
   center: [39.87, -105.021],
   zoom: 11
 });
-
-console.log(API_KEY)
-
+// Adding tile layers to the map
+var colorMap= L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {
+  attribution: "Map data &copy; <a href=\"https://www.openstreetmap.org/\">OpenStreetMap</a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA</a>, Imagery © <a href=\"https://www.mapbox.com/\">Mapbox</a>",
+  maxZoom: 18,
+  id: "mapbox.streets",
+  accessToken: API_KEY
+}).addTo(myMap);
 var graymap = L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {
   attribution: "Map data &copy; <a href='https://www.openstreetmap.org/'>OpenStreetMap</a> contributors, <a href='https://creativecommons.org/licenses/by-sa/2.0/'>CC-BY-SA</a>, Imagery © <a href='https://www.mapbox.com/'>Mapbox</a>",
   maxZoom: 18,
   id: "mapbox.light",
-  accessToken: "pk.eyJ1IjoiY2Q3MjEwIiwiYSI6ImNrOGRxZ25pbDB3dmgzbXFjeDgwMTNlemcifQ.LdK6QhaB7djt-DHnm_0Ypw"
+  accessToken: API_KEY
 }).addTo(myMap);
-
+var dark = L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {
+  attribution: "Map data &copy; <a href=\"https://www.openstreetmap.org/\">OpenStreetMap</a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA</a>, Imagery © <a href=\"https://www.mapbox.com/\">Mapbox</a>",
+  maxZoom: 18,
+  id: "mapbox.dark",
+  accessToken: API_KEY
+});
+// setting variable for baseMap
+var baseMaps = {
+  Color: colorMap,
+  Light: graymap,
+  Dark: dark
+}
+// add Layer Selector to map
+L.control.layers(baseMaps).addTo(myMap);
 
 // Grab the data with d3
 d3.csv("static/data/IncidentLocations.csv", function(response) {

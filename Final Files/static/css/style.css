@@ -36,8 +36,184 @@ html {
   }
 
 
-  h3 {
+  #header.motto {
     position: absolute;
     left: 302px;
     top: 48px;
   }
+
+
+  body {
+    font: 10px sans-serif;
+  }
+  
+  .axis path,
+  .axis line, 
+  .axis1 path,
+  .axis1 line {
+    fill: none;
+    stroke: #E6E7E8;
+    shape-rendering: crispEdges;
+  }
+  
+  .x.axis path, .x.axis1 path {
+    display: none;
+  }
+  
+  .line {
+    fill: none;
+    stroke-width: 1.5px;
+  }
+  
+  .legend-box {
+    cursor: pointer;  
+  }
+  
+  #mouse-tracker {
+    stroke: #E6E7E8;
+    stroke-width: 1px;
+  }
+  
+  .hover-line { 
+    stroke: #E6E7E8;
+    fill: none;
+    stroke-width: 1px;
+    left: 10px;
+    shape-rendering: crispEdges;
+    opacity: 1e-6;
+  }
+  
+  .hover-text {
+    stroke: none;
+    font-size: 30px;
+    font-weight: bold;
+    fill: #000000;
+  }
+  
+  .tooltip {
+    font-weight: normal;
+  }
+  
+  .brush .extent {
+    stroke: #FFF;
+    shape-rendering: crispEdges;
+  }
+
+  .btn {
+    border: none;
+    background-color: white;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+    display: inline-block;
+  }
+
+  /* On mouse-over */
+  .btn:hover {background: navy;}
+  
+  .home {color: black;
+            position: absolute;
+            left: 302px;
+            top: 102px;}
+  .warning {color: black;
+            position: absolute;
+            left: 400px;
+            top: 102px;} 
+  .danger {color: black;
+            position: absolute;
+            left: 528px;
+            top: 102px;}
+  .default {color: black;
+            position: absolute;
+            left:660px;
+            top: 102px} 
+  .btn-success {color: black;
+            position: absolute;
+            left:542px;
+            top: 102px;
+            height: 6;} 
+          
+  
+.box.HomePage {
+  margin-top: 60px; 
+  margin-bottom: 62px; 
+  padding: 10px 20px 15px; 
+  color:black;
+  background-color: white; 
+        }
+
+  p{
+    color: #6D8092;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px; 
+         }
+
+         .container {
+          width:900px; 
+          height: 150px;
+        }
+        
+        header {
+          width:900px; 
+          float:left; 
+          background: pink; 
+          height: 50px;
+        }
+        
+        .logo {
+          float: left;
+          padding: 15px
+        }
+        
+        .menu {
+          float: right;
+          padding: 15px
+        }
+        
+        .first-box {
+          width:300px; 
+          float:left; 
+          background: green; 
+          height: 150px;
+          margin: 50px
+        }
+        
+        .first-box p {
+          color: #ffffff;
+          padding-left: 80px;
+          padding-top: 50px;
+        }
+        
+        .second-box {
+          width:300px; 
+          height: 150px; 
+          float:right; 
+          background: blue;
+          margin: 50px
+        }
+        
+        .second-box p {
+          color: #ffffff;
+          padding-left: 110px;
+          padding-top: 50px;
+        }
+
+
+        rect.bordered {
+          stroke: #E6E6E6;
+          stroke-width:2px;   
+        }
+  
+        text.mono {
+          font-size: 9pt;
+          font-family: Consolas, courier;
+          fill: #aaa;
+        }
+  
+        text.axis-workweek {
+          fill: #000;
+        }
+  
+        text.axis-worktime {
+          fill: #000;
+        }

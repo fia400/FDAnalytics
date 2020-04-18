@@ -9,8 +9,10 @@ var margin = { top: 50, right: 10, bottom: 100, left: 100 },
           colors = ["#2D9816","#39C600","#94CE00","#C4D200","#D98900","#DD5C00","#E12D00"], // alternatively colorbrewer.YlGnBu[9]
           days = ["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"],
           times = ["1a", "2a", "3a", "4a", "5a", "6a", "7a", "8a", "9a", "10a", "11a", "12a", "1p", "2p", "3p", "4p", "5p", "6p", "7p", "8p", "9p", "10p", "11p", "12p"];
-          datasets = ["static/data/dldataEMS.csv","static/data/ddataFire.csv","static/data/dataOther.csv","static/data/dataTotal.csv"];
+          datasets = ["static/data/dataEMS.csv","static/data/dataFire.csv","static/data/dataOther.csv","static/data/dataTotal.csv"];
 
+       
+          buttonLabels = {"static/data/dataEMS.csv":"EMS", "static/data/dataFire.csv":"FIRE", "static/data/dataOther.csv": "Other", "static/data/dataTotal.csv":"Total"}
       var svg = d3.select("#heatchart").append("svg")
           .attr("width", width + margin.left + margin.right)
           .attr("height", height + margin.top + margin.bottom)
@@ -48,7 +50,7 @@ var margin = { top: 50, right: 10, bottom: 100, left: 100 },
         },
         function(error, data) {
           var colorScale = d3.scale.quantile()
-              .domain([0, buckets - 1, d3.max(data, function (d) { return d.value; })])
+              .domain([0, d3.max(data, function (d) { return d.value; })])
               .range(colors);
 
           var cards = svg.selectAll(".hour")
@@ -104,7 +106,7 @@ var margin = { top: 50, right: 10, bottom: 100, left: 100 },
 
       datasetpicker.enter()
         .append("input")
-        .attr("value", function(d){ return (d).substring(16,21) + " Calls"  })
+        .attr("value", function(d){ return buttonLabels[d] })
         .attr("type", "button")
         .attr("class", "dataset-button")
         .on("click", function(d) {
