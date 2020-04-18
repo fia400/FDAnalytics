@@ -1,6 +1,7 @@
 body {
   padding: 0;
   margin: 0;
+  font: 10px sans-serif;
 }
 
 #map,
@@ -41,11 +42,13 @@ html {
     left: 302px;
     top: 48px;
   }
-
-
-  body {
-    font: 10px sans-serif;
+  #header.motto2 {
+    position: absolute;
+    left: 302px;
+    top: 48px;
   }
+
+
   
   .axis path,
   .axis line, 
@@ -98,7 +101,7 @@ html {
     stroke: #FFF;
     shape-rendering: crispEdges;
   }
-
+/* Buttons */
   .btn {
     border: none;
     background-color: white;
@@ -125,95 +128,11 @@ html {
             top: 102px;}
   .default {color: black;
             position: absolute;
-            left:660px;
+            left:530px;
             top: 102px} 
   .btn-success {color: black;
             position: absolute;
-            left:542px;
+            left:656px;
             top: 102px;
             height: 6;} 
-          
-  
-.box.HomePage {
-  margin-top: 60px; 
-  margin-bottom: 62px; 
-  padding: 10px 20px 15px; 
-  color:black;
-  background-color: white; 
-        }
 
-  p{
-    color: #6D8092;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 17px; 
-         }
-
-         .container {
-          width:900px; 
-          height: 150px;
-        }
-        
-        header {
-          width:900px; 
-          float:left; 
-          background: pink; 
-          height: 50px;
-        }
-        
-        .logo {
-          float: left;
-          padding: 15px
-        }
-        
-        .menu {
-          float: right;
-          padding: 15px
-        }
-        
-        .first-box {
-          width:300px; 
-          float:left; 
-          background: green; 
-          height: 150px;
-          margin: 50px
-        }
-        
-        .first-box p {
-          color: #ffffff;
-          padding-left: 80px;
-          padding-top: 50px;
-        }
-        
-        .second-box {
-          width:300px; 
-          height: 150px; 
-          float:right; 
-          background: blue;
-          margin: 50px
-        }
-        
-        .second-box p {
-          color: #ffffff;
-          padding-left: 110px;
-          padding-top: 50px;
-        }
-
-
-        rect.bordered {
-          stroke: #E6E6E6;
-          stroke-width:2px;   
-        }
-  
-        text.mono {
-          font-size: 9pt;
-          font-family: Consolas, courier;
-          fill: #aaa;
-        }
-  
-        text.axis-workweek {
-          fill: #000;
-        }
-  
-        text.axis-worktime {
-          fill: #000;
-        }

@@ -68,9 +68,10 @@
           <img width="152px" height="128px" src="ACFRLogo.png" alt="">
           </a>
           <h1 align="left", style="font-family:Gill Sans Extrabold, sans-serif;"><b>Adams County Fire Department Dashboard</b> </h1>
-          <div id="header" class="motto"><h2 align="left" style="font-family:Gill Sans Extrabold, sans-serif;" ><b>Serving with Compasion and Integrity</b></h2></div>
+          <div id="header" class="motto"><h2 align="left" style="font-family:Gill Sans Extrabold, sans-serif;" ><b>Serving with Compassion and Integrity</b></h2></div>
             <button class="btn home"><a href="HomePage.html">Home</a></button>
-            <button data-step="4" data-intro="Bar Chart: <b>Click this to see an additional graph!</b>" class="btn warning"><a href="BarGraph.html">Bar Graph</a></button>
+            <button data-step="3" data-intro="Bar Chart: <b>Click this to see a graph that breaks down the type of calls by month.</b>" class="btn warning"><a href="BarGraph.html">Bar Graph</a></button>
+            <button data-step="4" data-intro="Timeline: <b>Click here to see a graph that shows detailed calls by month. Use the slider to zoom into a time period, and check the boxes for the types of calls you want to see.</b>" class="btn default"><a href="timeline.html">Timeline</a></button>
             <a class="btn btn-large btn-success" href="javascript:void(0);" onclick="javascript:introJs().start();">Show me how</a>
           
         </div>
@@ -78,28 +79,12 @@
     </nav>   
   </div>
  
-  <div class="container" > 
+  <div class="container" style="width: 1800px" > 
     <div class="row", class="h-75 d-inline-block", style="background-color: white;">
       <div style="height: 28px", style="background-color: white;">
       </div>
     </div>
 
-    <div class="row", class="h-75 d-inline-block", style="background-color: white;">
-      <div style="height: 28px", style="background-color: white;">
-        <h4 align="center"><b>Detailed Calls by Month</b></h4>
-      </div>
-    </div>
-<!-- Line -->
-    <div class="row">
-      <div  class="col-lg-12">
-        <div data-step="1" data-intro="Line: <b>This graph shows detailed calls by month. Use the slider to zoom into a time period, and check the boxes for the types of calls you want to see.</b>" class="col-lg-5 col-md-12" id="timeline"></div>
-        <script type="text/javascript" src="static/js/timeline.js"></script>
-      </div>
-    </div>
-
-    <div class="row">
-      <div style="height: 100px", style="background-color: white;"></div>
-    </div>
     <div class="row", class="h-75 d-inline-block", style="background-color: white;">
       <div style="height: 28px", style="background-color: white;">
         <h4 align="center"><b>Calls by Location</b></h4>
@@ -109,9 +94,10 @@
     <!-- map -->
     <div class="row">
       <div class="col-md-12">
-        <div data-step="2" data-intro="Leaflet Map: <b>This map shows the locations for all types of calls. Zoom in and click on a marker to view the details of the call.</b>" style="width: 1200px; height: 800px;" id="map"></div>
+        <div data-step="1" data-intro="Leaflet Map: <b>This map shows the locations and details for all types of calls. To see the markers use the legend in the upper right to add the types of calls you want to see. Then zoom in and click on a marker to view the details of the call.</b>" style="width: 1200px; height: 800px;" id="map"></div>
         <script type="text/javascript" src="static/js/config.js"></script>
         <script type="text/javascript" src="static/js/logic.js"></script>
+        <script src="https://unpkg.com/leaflet.featuregroup.subgroup@1.0.2/dist/leaflet.featuregroup.subgroup.js"></script>
       </div>
     </div>
 
@@ -128,7 +114,7 @@
 <!-- heatmap -->
     <div class="row">
       <div class="col-lg-12">
-        <div data-step="3" data-intro="Heat Chart: <b>This heat map shows which hours have the highest volume of calls. Use the buttons on the bottom to filter by type of call.</b>" id="heatchart"></div>
+        <div data-step="2" data-intro="Heat Chart: <b>This heat map shows which hours have the highest volume of calls. Use the buttons on the bottom to filter by type of call.</b>" id="heatchart"></div>
         <div id="dataset-picker"></div>
         <script type="text/javascript" src="static/js/heatmap.js"></script>
       </div>

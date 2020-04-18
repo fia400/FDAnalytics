@@ -1,4 +1,54 @@
-// // heat map
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8">
+<title>Fire Dept</title>
+
+<!-- <link rel="stylesheet" type="text/css" href="static/css/style.css"> -->
+<script src="https://d3js.org/d3.v3.js"></script>
+<link rel="stylesheet" type="text/css" href="static/css/style.css">
+
+
+    
+<!-- Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+crossorigin="anonymous"></script>
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+crossorigin="anonymous"></script>
+
+<!-- 
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+ -->
+
+
+
+</head>
+<body>
+
+
+  <div class="navigation">
+
+    <nav style="line-height:150px; height:150px; background-color:#f1ecd8">
+      <div class="col-md-12 my-auto">
+        <a class="navbar-brand">
+          <img width="152px" height="128px" src="ACFRLogo.png" alt="">
+          </a>
+          <!-- <h1 align="left", style="font-family:Gill Sans Extrabold, sans-serif;"><b>Adams County Fire Department Dashboard</b> </h1>
+          <div id="header" class="motto"><h2 align="left" style="font-family:Gill Sans Extrabold, sans-serif;" ><b>Serving with Compassion and Integrity</b></h2></div> -->
+          <button class="btn home"><a href="HomePage.html">Home</a></button>
+          <button  class="btn warning"><a href="BarGraph.html">Bar Graph</a></button>
+          <button  class="btn default"><a href="timeline.html">Timeline</a></button>
+            
+          
+        </div>
+      </div> 
+    </nav>   
+  </div>
+
+
+<script>
+
 var margin = {top: 20, right: 200, bottom: 100, left: 50},
     margin2 = { top: 430, right: 10, bottom: 20, left: 40 },
     width = 960 - margin.left - margin.right,
@@ -72,7 +122,7 @@ svg.append("defs")
 
 //end slider part----------------------------------------------------------------------------------- 
 
-d3.csv("static/data/timeline.csv", function(error, data) { 
+d3.csv("timeline.csv", function(error, data) { 
   color.domain(d3.keys(data[0]).filter(function(key) { // Set the domain of the color ordinal scale to be all the csv headers except "date", matching a color to an issue
     return key !== "date"; 
   }));
@@ -349,3 +399,9 @@ d3.csv("static/data/timeline.csv", function(error, data) {
     });
     return d3.max(maxYValues);
   }
+
+</script>
+
+</body>
+
+</html>
